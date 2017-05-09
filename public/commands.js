@@ -153,9 +153,24 @@ var COMMANDS = {
     },
     register : {
         handler : function () {
-        var userName = document.createElement('input'),
+            // Create elements
+            var userName = document.createElement('input'),
             password = document.createElement('input'),
             confirmPassword = document.createElement('input');
+            
+            // Set element attributes
+            // Create attributes to assign to the elements
+            var typeInputAttribute = document.createAttribute("type"),
+                typePasswordAttribute = document.createAttribute("type");
+            
+            // Give values to the new attributes
+            typeInputAttribute.value = "input";
+            typePasswordAttribute.value = "password";
+            
+            // Assign the attributes to the new elements
+            userName.setAttributeNode(typeInputAttribute);
+            password.setAttributeNode(typePasswordAttribute);
+            confirmPassword.setAttributeNode(typePasswordAttribute);
             
             userName.value = Attributes.get('nick');
             password.placeholder = 'Password';
